@@ -9,5 +9,6 @@ void main()
 {
   
     // Set a fixed color (e.g., red)
-    fragColor =  u_Color* texture(tex,VC);
+    fragColor =   texture(tex,VC);
+    //fragColor =(vec4(1.0,0.0,0.9,1.0));
 }

@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using System.Data;
 using System.Numerics;
 using System.Runtime.Intrinsics.X86;
 using OpenTK.Graphics.OpenGL4;
@@ -12,17 +14,22 @@ using Gametest;
 
 Console.WriteLine("Hello, World!");
 GameWindow game = new GameWindow(GameWindowSettings.Default, new NativeWindowSettings() { Size = (800, 900), Title = "hi",Profile = ContextProfile.Compatability});
+game.VSync = VSyncMode.On;
+Texture text = new Texture("resources/grass.png");
+Shader shader = new Shader("resources/shader.vert", "resources/shader.frag");
 float[] vertices = {
-    0.5f,  0.5f, 0.0f,  // top right
-    0.5f, -0.5f, 0.0f,  // bottom right
-    -0.5f, -0.5f, 0.0f,  // bottom left
-    -0.5f,  0.5f, 0.0f   // top left
+    1.0f,  1.0f, 0.0f,  // top right
+    1.0f,  0.0f, 0.0f,  // bottom right
+     0.0f, 0.0f, 0.0f,  // bottom left
+     0.0f,  1f, 0.0f   // top left
 };
+Console.WriteLine(text.Width);
+Console.WriteLine(text.Height);
 float[] textcords = {
-      0.0f, 0.0f,  // top right
-     0.0f, 1.0f,  // bottom right
-     1.0f, 1.0f,  // bottom left
-      1.0f, 0.0f   // top left
+      16.0f/text.Width, 16.0f/text.Height,  // top right
+      16.0f/text.Width,0.0f , // bottom right
+     0.0f, 0.0f,  // bottom left
+      0.0f, 16.0f/text.Height  // top left
 };
 
 
@@ -31,7 +38,6 @@ uint[] indices = {  // note that we start from 0!
     1, 2, 3    // second triangle
 };
 ErrorChecker.InitializeGLDebugCallback();
-VAO test = new VAO();
 
 Bufferlayout bufferlayout = new Bufferlayout();
 bufferlayout.count = 3;
@@ -39,35 +45,48 @@ bufferlayout.normalized = false;
 bufferlayout.offset = 0;
 bufferlayout.type = VertexAttribType.Float;
 bufferlayout.typesize = sizeof(float);
-test.LinkAtribute(vertices,bufferlayout);
+
+
+Mesh test2 = new Mesh();
+test2.AddAtribute(bufferlayout,vertices);
 bufferlayout.count = 2;
-test.LinkAtribute(textcords,bufferlayout);
+test2.AddAtribute(bufferlayout,textcords);
+test2.AddIndecies(indices);
 
-test.LinkElements(indices);
+View Main = new View();
+Main.addObject(test2);
 
 
 
+test2.Shader = shader;
+test2.Texture = text;
 
-Texture text = new Texture("resources/grass.png");
-Shader shader = new Shader("resources/shader.vert", "resources/shader.frag");
-shader.Bind();
-text.Bind();
-shader.setUniform4v("u_Color",2.0f,0.5f,0f,0f);
-shader.Unbind();
-game.RenderFrame += _ => Update();
+
+game.Resize += e => Main.Resize(e.Width, e.Height);
+game.RenderFrame += _ => Main.draw();
 game.RenderFrame += _ => game.SwapBuffers();
+game.KeyDown += e => Update(e);
 
 
 
 game.Run();
 
+void Update( KeyboardKeyEventArgs e){
+    switch (e.Key)
+    {
+        case Keys.W: Main.vpossition.Y++; break;
+        case Keys.A: Main.vpossition.X--; break;
+        case Keys.S: Main.vpossition.Y--; break;
+        case Keys.D: Main.vpossition.X++; break;
+        
+        
+        case Keys.E: Main.rotation++; break;
+        case Keys.R: Main.vsize.X++; break;
+        case Keys.F: Main.vsize.X--; break;
+        case Keys.Q:  Main.rotation --; break;
+       
+       
+    } 
+    Console.WriteLine("poss: " + Main.vpossition +"  size: " + Main.vsize + " rot: "+ Main.rotation);
 
-
-void Update()
-{
-    GL.Clear(ClearBufferMask.ColorBufferBit);
-
-    shader.Bind();
-    test.Bind();
-    GL.DrawElements(PrimitiveType.Triangles,indices.Length,DrawElementsType.UnsignedInt,0);
 }

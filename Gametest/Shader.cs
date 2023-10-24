@@ -1,4 +1,6 @@
-﻿namespace Gametest;
+﻿using OpenTK.Mathematics;
+
+namespace Gametest;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 
@@ -43,6 +45,13 @@ public class Shader
     {
         GL.Uniform1( GL.GetUniformLocation(_Handle, name),v1);
     }   
+    
+    public void setUniformM4(string name,Matrix4 v1)
+    {
+      
+        GL.UniformMatrix4( GL.GetUniformLocation(_Handle, name),false,ref v1);
+    }   
+    
     public void setUniform4v(string name,float v1,float v2,float v3,float v4)
     {
         GL.Uniform4( GL.GetUniformLocation(_Handle, name),v1,v2,v3,v4);
