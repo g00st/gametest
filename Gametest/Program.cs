@@ -58,14 +58,26 @@ Body1.mesh = test2;
 Body1.Position = new Vector2(50, 50);
 Body1.Size = new Vector2(100, 100);
 Body1.Rotation = 90.0f;
-
-
-
-
-
-
+float rotation = 0; 
 View Main = new View();
 Main.addObject(Body1);
+List<DrawInfo> objects = new List<DrawInfo>();
+for (int i = 0; i < 10; i++)
+{
+    DrawInfo temp = new DrawInfo();
+    temp.mesh = test2;
+    temp.Rotation =  rotation;
+    temp.Size = new Vector2(50, 50);
+    temp.Position = new Vector2(50 * i, 50* i);
+    Console.WriteLine(temp.Position);
+    Console.WriteLine(i);
+    objects.Add(temp);
+    Main.addObject(temp);
+}
+
+
+
+
 
 
 
@@ -77,7 +89,8 @@ game.Resize += e => Main.Resize(e.Width, e.Height);
 game.RenderFrame += _ => Main.draw();
 game.RenderFrame += _ => game.SwapBuffers();
 game.KeyDown += e => Update(e);
-
+game.UpdateFrame += _ => rotation++;
+game.UpdateFrame += _ => urotatio();
 
 
 game.Run();
@@ -100,4 +113,11 @@ void Update( KeyboardKeyEventArgs e){
     } 
     Console.WriteLine("poss: " + Main.vpossition +"  size: " + Main.vsize + " rot: "+ Main.rotation);
 
+}
+
+void urotatio(){
+    for (int i = 0; i < objects.Count; i++)
+    {
+        objects[i].Rotation = rotation ;
+    }
 }

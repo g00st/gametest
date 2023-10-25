@@ -43,12 +43,16 @@ public class View
            // Console.WriteLine("hi");
             Matrix4 ObjectScalematrix = Matrix4.CreateScale(obj.Size.X,obj.Size.Y, 1.0f);
             Matrix4 ObjectRotaionmatrix = Matrix4.CreateRotationZ(obj.Rotation);
-            Matrix4 ObjectTranslationmatrix = Matrix4.CreateRotationZ(obj.Rotation);
-            Matrix4 scaleMatrix = Matrix4.CreateScale(100.0f, 100.0f, 1.0f);
+            Matrix4 ObjectTranslationmatrix = Matrix4.CreateTranslation(obj.Position.X,obj.Position.Y,0);
+
+            Matrix4 objectransform = Matrix4.Identity * ObjectScalematrix;
+            objectransform *= ObjectRotaionmatrix;
+            objectransform *= ObjectTranslationmatrix;
+            
             
           Vector3 cameraRotationAxis = new Vector3(0, 0, 1);
           Matrix4 cameraRotationMatrix = Matrix4.CreateFromAxisAngle(cameraRotationAxis, MathHelper.DegreesToRadians(rotation));
-          Matrix4 comb =   (scaleMatrix* Matrix4.CreateTranslation(-vpossition.X,-vpossition.Y,0) * cameraRotationMatrix *Matrix4.CreateTranslation(vpossition.X,vpossition.Y,0) )*camera  ;
+          Matrix4 comb =   (objectransform* Matrix4.CreateTranslation(-vpossition.X,-vpossition.Y,0) * cameraRotationMatrix *Matrix4.CreateTranslation(vpossition.X,vpossition.Y,0) )*camera  ;
             obj.mesh.Draw(comb);
         }
     }

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj": {}
+    "/home/g00st/RiderProjects/gametest/Gametest/Gametest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj": {
+    "/home/g00st/RiderProjects/gametest/Gametest/Gametest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
+        "projectUniqueName": "/home/g00st/RiderProjects/gametest/Gametest/Gametest.csproj",
         "projectName": "Gametest",
-        "projectPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
-        "packagesPath": "C:\\Users\\geist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\obj\\",
+        "projectPath": "/home/g00st/RiderProjects/gametest/Gametest/Gametest.csproj",
+        "packagesPath": "/home/g00st/.nuget/packages/",
+        "outputPath": "/home/g00st/RiderProjects/gametest/Gametest/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\geist\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/g00st/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -60,12 +58,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.23, 6.0.23]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
         }
       }
     }
