@@ -53,8 +53,19 @@ bufferlayout.count = 2;
 test2.AddAtribute(bufferlayout,textcords);
 test2.AddIndecies(indices);
 
+DrawInfo Body1 = new DrawInfo();
+Body1.mesh = test2;
+Body1.Position = new Vector2(50, 50);
+Body1.Size = new Vector2(100, 100);
+Body1.Rotation = 90.0f;
+
+
+
+
+
+
 View Main = new View();
-Main.addObject(test2);
+Main.addObject(Body1);
 
 
 

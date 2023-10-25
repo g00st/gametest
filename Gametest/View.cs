@@ -11,7 +11,7 @@ using OpenTK.Windowing.GraphicsLibraryFramework;
 
 public class View
 {
-    private List<Mesh> drawObjects;
+    private List<DrawInfo> drawObjects;
     public int  Width, Height;
     public Vector2 vpossition;
     public Vector2 vsize;
@@ -29,7 +29,7 @@ public class View
         GL.Viewport(0, 0, Width, Height);
     }
     
-    public void addObject(Mesh obj){
+    public void addObject(DrawInfo obj){
         drawObjects.Add(obj);
     }
     public void draw()
@@ -41,12 +41,15 @@ public class View
         foreach (var obj in drawObjects)
         {
            // Console.WriteLine("hi");
+            Matrix4 ObjectScalematrix = Matrix4.CreateScale(obj.Size.X,obj.Size.Y, 1.0f);
+            Matrix4 ObjectRotaionmatrix = Matrix4.CreateRotationZ(obj.Rotation);
+            Matrix4 ObjectTranslationmatrix = Matrix4.CreateRotationZ(obj.Rotation);
             Matrix4 scaleMatrix = Matrix4.CreateScale(100.0f, 100.0f, 1.0f);
             
           Vector3 cameraRotationAxis = new Vector3(0, 0, 1);
           Matrix4 cameraRotationMatrix = Matrix4.CreateFromAxisAngle(cameraRotationAxis, MathHelper.DegreesToRadians(rotation));
           Matrix4 comb =   (scaleMatrix* Matrix4.CreateTranslation(-vpossition.X,-vpossition.Y,0) * cameraRotationMatrix *Matrix4.CreateTranslation(vpossition.X,vpossition.Y,0) )*camera  ;
-            obj.Draw(comb);
+            obj.mesh.Draw(comb);
         }
     }
 
@@ -71,7 +74,7 @@ public class View
     {
         vsize = new Vector2(100, 100);
         vpossition = new Vector2(50, 50);
-        drawObjects = new List<Mesh>();
+        drawObjects = new List<DrawInfo>();
         rotation = 0;
     }
     
