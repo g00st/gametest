@@ -106,15 +106,15 @@ game.Run();
 void Update( KeyboardKeyEventArgs e){
     switch (e.Key)
     {
-        case Keys.W: Main.vpossition.Y++; break;
-        case Keys.A: Main.vpossition.X--; break;
-        case Keys.S: Main.vpossition.Y--; break;
-        case Keys.D: Main.vpossition.X++; break;
+        case Keys.W: Main.vpossition.Y+=100; break;
+        case Keys.A: Main.vpossition.X-= 10; break;
+        case Keys.S: Main.vpossition.Y-= 10; break;
+        case Keys.D: Main.vpossition.X+= 10; break;
         
         
         case Keys.E: Main.rotation++; break;
-        case Keys.R: Main.vsize.X++; break;
-        case Keys.F: Main.vsize.X--; break;
+        case Keys.R: Main.vsize.X+= 10; break;
+        case Keys.F: Main.vsize.X-=10; break;
         case Keys.Q:  Main.rotation --; break;
        
        

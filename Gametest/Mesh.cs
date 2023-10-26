@@ -3,6 +3,7 @@ using OpenTK.Mathematics;
 using DrawElementsType = OpenTK.Graphics.OpenGL4.DrawElementsType;
 using GL = OpenTK.Graphics.OpenGL4.GL;
 using PrimitiveType = OpenTK.Graphics.OpenGL4.PrimitiveType;
+using Vector3 = System.Numerics.Vector3;
 
 namespace Gametest;
 
@@ -58,11 +59,13 @@ public class Mesh
 
     public void Draw(Matrix4 mvp)
     {
+        Random zufall = new Random();
+        int zufallszahl = zufall.Next(0, 14);
         _vao.Bind();
         _texture.Bind();
         _shader.Bind();
         _shader.setUniformM4("u_MVP", mvp);
-        
+        _shader.setUniform4v("u_Color", 1.0f,1.0f,1.0f,(float)zufallszahl);
         GL.DrawElements(PrimitiveType.Triangles, _Indecies.Length, DrawElementsType.UnsignedInt, 0);
 
     }

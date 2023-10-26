@@ -25,8 +25,7 @@ string fileName = "Tiles.xml";
 List<float> vertl = new List<float>();
 List<uint> indl  = new List<uint>();
 List<float> textcords = new List<float>();
-int height = 1000;
-int width = 1000;
+
 
 float tileheight = 10;
 float tilewidth = 10;
@@ -58,10 +57,10 @@ xmlWriter.WriteXmlToFile(indl.ToArray(), vertl.ToArray(), textcords.ToArray(), f
 
 List<float> clacTextcords(int X,int Y){
     List<float> temp = new List<float>();
-    temp.Add(1.0f);
+    temp.Add(1.0f/14f);
     temp.Add(1.0f);
     
-    temp.Add(1.0f);
+    temp.Add(1.0f/14f);
     temp.Add(0.0f);
     
     temp.Add(0.0f);
@@ -78,15 +77,17 @@ List<float> calcVert(int X, int Y)
     List<float> temp = new List<float>();
     temp.Add((X * tilewidth) +tilewidth);  // top right
     temp.Add((Y * tileheight)+tileheight);
+    //temp.Add(9.99f);
     
     temp.Add((X * tilewidth) +tilewidth);  // bottom right
     temp.Add((Y * tileheight));
-    
+   // temp.Add(9.99f);
     temp.Add((X * tilewidth) );  // bottom left
     temp.Add((Y * tileheight));
-    
+    //temp.Add(9.99f);
     temp.Add((X * tilewidth) );  // top Left
-    temp.Add((Y * tileheight )+tilewidth);
+    temp.Add((Y * tileheight )+tileheight);
+    //temp.Add(9.99f);
     return temp;
 
 
@@ -95,8 +96,9 @@ List<float> calcVert(int X, int Y)
 List<uint> calcInd(int X, int Y)
 {
     List<uint> temp = new List<uint>();
-    Console.WriteLine(4*X+4*1000*Y);
-    int tempi = (4 * X + 4 * 10 * Y);
+    
+    int tempi = (4 * X + 4 * 1000 * Y);
+   // Console.WriteLine(tempi);
     temp.Add(((uint)(int) tempi+0));
     temp.Add(((uint)(int) tempi+1));
     temp.Add(((uint)(int) tempi+3));
@@ -107,3 +109,5 @@ List<uint> calcInd(int X, int Y)
     return temp;
 
 }
+
+List<int> simspace = new List<int>();

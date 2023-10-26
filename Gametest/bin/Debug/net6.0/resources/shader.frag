@@ -7,7 +7,7 @@ uniform sampler2D tex;
 in vec2 VC;
 void main()
 {
-  
+
     // Set a fixed color (e.g., red)
     fragColor =   texture(tex,VC);
     //fragColor =(vec4(1.0,0.0,0.9,1.0));

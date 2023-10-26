@@ -65,7 +65,7 @@ public static class Loader
        TemDrawinfo.mesh = temMesh;
        TemDrawinfo.Position = new Vector2(0, 0);
        TemDrawinfo.Rotation = 0.0f;
-       TemDrawinfo.Size = new Vector2(1, 1);
+       TemDrawinfo.Size = new Vector2(10, 10);
         
        Console.WriteLine(ind.Length);
        
