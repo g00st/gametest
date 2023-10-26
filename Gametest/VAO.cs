@@ -39,11 +39,13 @@ public class VAO
     public void LinkElements(uint[]bufferData)
     {
         uint vbe  = 0;
-         
+     //   ErrorChecker.CheckForGLErrors("chh");
         GL.CreateBuffers(1, out  vbe);
+       // ErrorChecker.CheckForGLErrors("c0");
         GL.NamedBufferData(vbe, bufferData.Length*sizeof(uint),bufferData ,BufferUsageHint.StaticDraw );
+        //ErrorChecker.CheckForGLErrors("c1");
         GL.VertexArrayElementBuffer(_handle, vbe);
-        ErrorChecker.CheckForGLErrors("c");
+     //   ErrorChecker.CheckForGLErrors("c");
     }
 
     public void Bind()

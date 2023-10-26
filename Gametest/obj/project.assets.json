@@ -437,24 +437,26 @@
     ]
   },
   "packageFolders": {
-    "/home/g00st/.nuget/packages/": {}
+    "C:\\Users\\geist\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/g00st/RiderProjects/gametest/Gametest/Gametest.csproj",
+      "projectUniqueName": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
       "projectName": "Gametest",
-      "projectPath": "/home/g00st/RiderProjects/gametest/Gametest/Gametest.csproj",
-      "packagesPath": "/home/g00st/.nuget/packages/",
-      "outputPath": "/home/g00st/RiderProjects/gametest/Gametest/obj/",
+      "projectPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
+      "packagesPath": "C:\\Users\\geist\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/g00st/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\geist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -493,18 +495,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.linux-x64",
-            "version": "[6.0.23, 6.0.23]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

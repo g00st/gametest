@@ -27,9 +27,9 @@ public class Shader
 
         int res =0;
         GL.GetShader(vertexHandle,ShaderParameter.CompileStatus, out  res);
-        if (1 == res) { Console.WriteLine("vertex shader compiled"); } else { Console.WriteLine(GL.GetProgramInfoLog(vertexHandle)); }
+        if (1 == res) { Console.WriteLine("vertex shader compiled"); } else { Console.WriteLine( " eee1"+ GL.GetProgramInfoLog(vertexHandle)); }
         GL.GetShader(fragmentHandle,ShaderParameter.CompileStatus, out  res);
-        if (1 == res) { Console.WriteLine("frag shader compiled"); } else { Console.WriteLine(GL.GetProgramInfoLog(fragmentHandle)); }
+        if (1 == res) { Console.WriteLine("frag shader compiled"); } else { Console.WriteLine(" eee2"+GL.GetProgramInfoLog(fragmentHandle)); }
 
         _Handle = GL.CreateProgram();
         GL.AttachShader(_Handle,vertexHandle);
@@ -44,6 +44,13 @@ public class Shader
     public void setUniform1i(string name,int v1)
     {
         GL.Uniform1( GL.GetUniformLocation(_Handle, name),v1);
+    }
+
+    public void setUniformV2f(string name, Vector2 v2)
+    {
+     
+    
+        GL.Uniform2( GL.GetUniformLocation(_Handle, name),v2);
     }   
     
     public void setUniformM4(string name,Matrix4 v1)

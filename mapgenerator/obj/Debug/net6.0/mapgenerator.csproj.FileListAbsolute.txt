@@ -1,0 +1,14 @@
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.AssemblyInfoInputs.cache
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.AssemblyInfo.cs
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.csproj.CoreCompileInputs.cache
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.exe
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.deps.json
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.runtimeconfig.json
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.dll
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.pdb
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.dll
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\refint\mapgenerator.dll
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.pdb
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.genruntimeconfig.cache
+C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\ref\mapgenerator.dll

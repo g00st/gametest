@@ -21,6 +21,7 @@ public class Mesh
     private List<float[]> _Vertecies;
     private uint[] _Indecies;
     
+    
     public Shader Shader
     {
         get { return _shader; }
@@ -46,6 +47,7 @@ public class Mesh
        _Vertecies.Add(data);
         
     }
+    
 
     public void AddIndecies(uint[] ind)
     {
