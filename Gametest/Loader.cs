@@ -36,6 +36,11 @@ public static class Loader
         uint[] ind;
         float[] vert; 
         float[] text; 
+        
+        
+        
+        
+        
        XmlReader filein = new XmlReader ();
        filein.ReadXmlFromFile(name +"Tiles.xml",out  ind,out  vert,out text);
        Console.WriteLine(ind.Length +" "+vert.Length +" " +text.Length);
@@ -60,8 +65,10 @@ public static class Loader
        TemDrawinfo.mesh = temMesh;
        TemDrawinfo.Position = new Vector2(0, 0);
        TemDrawinfo.Rotation = 0.0f;
-       TemDrawinfo.Size = new Vector2(10, 10);
-
+       TemDrawinfo.Size = new Vector2(1, 1);
+        
+       Console.WriteLine(ind.Length);
+       
        Map tMap = new Map(TemDrawinfo, new Vector2(32,32));
        return tMap;
 

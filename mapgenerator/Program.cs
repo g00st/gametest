@@ -3,7 +3,7 @@
 using mapgenerator;
 
 Console.WriteLine("Hello, World!");
-string fileName = "output.xml";
+string fileName = "Tiles.xml";
 
 
 
@@ -33,16 +33,19 @@ float tilewidth = 10;
 
 
 
-for (int Y=0; Y<10; Y++){
+for (int Y=0; Y<1000; Y++){
 
-    for( int X =0; X<10;X++)
+    for( int X =0; X<1000;X++)
     {
+      
         textcords.AddRange(clacTextcords(X,Y));
         vertl.AddRange(calcVert(X, Y));
         indl.AddRange(calcInd(X,Y));
         
     }
 }
+
+
 
 XmlWriter xmlWriter = new XmlWriter();
 xmlWriter.WriteXmlToFile(indl.ToArray(), vertl.ToArray(), textcords.ToArray(), fileName);
@@ -92,13 +95,15 @@ List<float> calcVert(int X, int Y)
 List<uint> calcInd(int X, int Y)
 {
     List<uint> temp = new List<uint>();
-    temp.Add(((uint)(int) (X+Y+0)));
-    temp.Add(((uint)(int) (X+Y+1)));
-    temp.Add(((uint)(int) (X+Y+3)));
+    Console.WriteLine(4*X+4*1000*Y);
+    int tempi = (4 * X + 4 * 10 * Y);
+    temp.Add(((uint)(int) tempi+0));
+    temp.Add(((uint)(int) tempi+1));
+    temp.Add(((uint)(int) tempi+3));
     
-    temp.Add(((uint)(int) (X+Y+1)));
-    temp.Add(((uint)(int) (X+Y+2)));
-    temp.Add(((uint)(int) (X+Y+3)));
+    temp.Add(((uint)(int) tempi+1));
+    temp.Add(((uint)(int) tempi+2));
+    temp.Add(((uint)(int)tempi+3));
     return temp;
 
 }

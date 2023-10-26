@@ -4,6 +4,7 @@ using OpenTK.Graphics.OpenGL;
 
 public static class ErrorChecker
 {
+    private static DebugProc _debugCallback;
     public static void CheckForGLErrors(string context)
     {
         ErrorCode errorCode;
@@ -19,7 +20,8 @@ public static class ErrorChecker
     }
     public static void InitializeGLDebugCallback()
     {
-        GL.DebugMessageCallback(GLDebugCallback, IntPtr.Zero);
+        _debugCallback = GLDebugCallback;
+        GL.DebugMessageCallback(_debugCallback, IntPtr.Zero);
         GL.Enable(EnableCap.DebugOutput);
     }
 
