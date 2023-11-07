@@ -5,7 +5,7 @@ namespace mapgenerator;
 
 public class XmlWriter
 {
-    public void WriteXmlToFile(uint[] ind, float[] vert, float[]text, string fileName)
+    public void WriteXmlToFile(uint[] ind, float[] vert, float[]text, float[] tileMap, string fileName)
     {
         // Create a new XML document
         XDocument xmlDocument = new XDocument(
@@ -20,6 +20,9 @@ public class XmlWriter
                 ),
                 new XElement("Text",
                     new XElement("Array", string.Join(" ", text)),
+                    new XElement("Count", vert.Length)
+                ),new XElement("Tile",
+                    new XElement("Array", string.Join(" ", tileMap)),
                     new XElement("Count", vert.Length)
                 )
             

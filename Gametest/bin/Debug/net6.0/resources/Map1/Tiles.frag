@@ -12,7 +12,7 @@ void main()
 {
 // Scale the texture coordinates
 vec2 scaledTextureCoords = text_cords;
-scaledTextureCoords.x += (1.0/14.0)*u_Color.w;
+//scaledTextureCoords.x += (1.0/14.0)*u_Color.w;
 
 // Sample the texture with the modified coordinates
 fragColor = texture(tex, scaledTextureCoords);
