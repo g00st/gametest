@@ -32,8 +32,8 @@ List<float> tilemapo = new List<float>();
 
 float tileheight = 10;
 float tilewidth = 10;
-int MapsizeX = 100;
-int MapsizeY = 100;
+int MapsizeX = 50;
+int MapsizeY = 50;
 
 
 Wavecolaps generator = new Wavecolaps(MapsizeX, MapsizeY);
