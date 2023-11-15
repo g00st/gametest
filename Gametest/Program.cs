@@ -32,7 +32,7 @@ float[] textcords = {
       0.0f, 32.0f/text.Height  // top left
 };
 
-
+//re
 uint[] indices = {  // note that we start from 0!
     0, 1, 3,   // first triangle
     1, 2, 3    // second triangle
