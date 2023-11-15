@@ -23,40 +23,28 @@
           "OpenTK.Mathematics": "[4.8.1, 4.9.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Audio.OpenAL.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Audio.OpenAL.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Audio.OpenAL.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Audio.OpenAL.dll": {}
         }
       },
       "OpenTK.Compute/4.8.1": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Compute.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Compute.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Compute.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Compute.dll": {}
         }
       },
       "OpenTK.Core/4.8.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/OpenTK.Core.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.1/OpenTK.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/OpenTK.Core.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.1/OpenTK.Core.dll": {}
         }
       },
       "OpenTK.Graphics/4.8.1": {
@@ -66,27 +54,19 @@
           "OpenTK.Mathematics": "[4.8.1, 4.9.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Graphics.dll": {}
         }
       },
       "OpenTK.Input/4.8.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/OpenTK.Input.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/OpenTK.Input.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/OpenTK.Input.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/OpenTK.Input.dll": {}
         }
       },
       "OpenTK.Mathematics/4.8.1": {
@@ -95,14 +75,10 @@
           "System.Runtime.CompilerServices.Unsafe": "5.0.0"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Mathematics.dll": {}
         }
       },
       "OpenTK.redist.glfw/3.3.8.39": {
@@ -147,14 +123,10 @@
           "OpenTK.Mathematics": "[4.8.1, 4.9.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Windowing.Common.dll": {}
         }
       },
       "OpenTK.Windowing.Desktop/4.8.1": {
@@ -166,14 +138,10 @@
           "OpenTK.Windowing.GraphicsLibraryFramework": "[4.8.1, 4.9.0)"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Windowing.Desktop.dll": {}
         }
       },
       "OpenTK.Windowing.GraphicsLibraryFramework/4.8.1": {
@@ -183,14 +151,10 @@
           "OpenTK.redist.glfw": "3.3.8.39"
         },
         "compile": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netcoreapp3.1/OpenTK.Windowing.GraphicsLibraryFramework.dll": {}
         }
       },
       "StbImageSharp/2.27.13": {
@@ -205,14 +169,10 @@
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       }
     }
@@ -437,19 +397,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\geist\\.nuget\\packages\\": {}
+    "C:\\Users\\herob\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
+      "projectUniqueName": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj",
       "projectName": "Gametest",
-      "projectPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
-      "packagesPath": "C:\\Users\\geist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\obj\\",
+      "projectPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj",
+      "packagesPath": "C:\\Users\\herob\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\geist\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\herob\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -490,8 +450,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -500,7 +459,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
