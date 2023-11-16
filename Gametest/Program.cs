@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Gametest;
 
 
+
 /*
  * versuchen zu bauen struktur damit wie bei chicken
  * wir haben startmenu und button zu szene wechsel und zurück
@@ -23,9 +24,19 @@ using Gametest;
 
 //this.backButton.SetCallback(BackHandler); 
 
+
+/* OnRenderFrame hier rein
+ * 
+ * game.RenderFrame += _ => Main.draw();
+game.RenderFrame += _ => game.SwapBuffers();
+ * 
+ */
+
 Console.WriteLine("Hello, World!");
+//(int width, int height, string title) : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = (width, height), Title = title,Profile = ContextProfile.Compatability,
+//Flags = ContextFlags.Default })
 GameWindow game = new GameWindow(GameWindowSettings.Default, new NativeWindowSettings() { Size = (800, 900), Title = "hi",Profile = ContextProfile.Compatability});
-game.VSync = VSyncMode.On;
+game.VSync = VSyncMode.On;   //in konstruktor this.VSync = VSyncMode.On;
 Gamestate gamestate = new Gamestate();
 gamestate = Gamestate.startmenu;
 Texture text = new Texture("resources/floorTiles..png");
@@ -50,7 +61,7 @@ uint[] indices = {  // note that we start from 0!
     0, 1, 3,   // first triangle
     1, 2, 3    // second triangle
 };
-ErrorChecker.InitializeGLDebugCallback();
+ErrorChecker.InitializeGLDebugCallback();   // nich in konstruktor, danach weiter konstruktor
 
 Bufferlayout bufferlayout = new Bufferlayout();
 bufferlayout.count = 3;
@@ -107,14 +118,16 @@ Map dontdie = Loader.LoadMap("resources/Map1/");
 Main.addObject(dontdie);
 
 game.Resize += e => Main.Resize(e.Width, e.Height);
-game.RenderFrame += _ => Main.draw();
-game.RenderFrame += _ => game.SwapBuffers();
+game.RenderFrame += _ => Main.draw();    // zu onrenderframe, override
+game.RenderFrame += _ => game.SwapBuffers();    // zu onrenderframe, override
 game.KeyDown += e => Update(e);
 game.UpdateFrame += _ => rotation++;
 game.UpdateFrame += _ => urotatio();
 
 
-game.Run();
+game.Run();   //weg weil kommt zu programm.cs
+
+//konstruktor ende, dann update
 
 void Update( KeyboardKeyEventArgs e){
     //update gamestate
