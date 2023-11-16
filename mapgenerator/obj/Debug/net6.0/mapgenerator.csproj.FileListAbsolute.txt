@@ -12,3 +12,18 @@ C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\refint\mapge
 C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.pdb
 C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.genruntimeconfig.cache
 C:\Users\geist\RiderProjects\Gametest\mapgenerator\obj\Debug\net6.0\ref\mapgenerator.dll
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.exe
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.deps.json
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.runtimeconfig.json
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.dll
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\bin\Debug\net6.0\mapgenerator.pdb
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.csproj.AssemblyReference.cache
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.AssemblyInfoInputs.cache
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.AssemblyInfo.cs
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.csproj.CoreCompileInputs.cache
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.dll
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\refint\mapgenerator.dll
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.pdb
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\mapgenerator.genruntimeconfig.cache
+C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\mapgenerator\obj\Debug\net6.0\ref\mapgenerator.dll

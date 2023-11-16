@@ -16,6 +16,16 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="resources\Map1\Tiles.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="resources\Map1\Tiles.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
       <PackageReference Include="OpenTK" Version="4.8.1" />
       <PackageReference Include="StbImageSharp" Version="2.27.13" />
     </ItemGroup>
@@ -43,9 +53,6 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="resources\Map1\Tiles.vert">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="resources\Map1\Tiles.xml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

@@ -37,7 +37,7 @@ public class View
         Matrix4 camera =  calcCameraProjection();
 
         GL.Clear(ClearBufferMask.ColorBufferBit);
-
+        //statt liste an drawobjects dann eine liste an renderables
         foreach (var drawObject in drawObjects)
         {
             DrawInfo obj = drawObject.DrawInfo;
@@ -54,6 +54,7 @@ public class View
           Vector3 cameraRotationAxis = new Vector3(0, 0, 1);
           Matrix4 cameraRotationMatrix = Matrix4.CreateFromAxisAngle(cameraRotationAxis, MathHelper.DegreesToRadians(rotation));
           Matrix4 comb =   (objectransform* Matrix4.CreateTranslation(-vpossition.X,-vpossition.Y,0) * cameraRotationMatrix *Matrix4.CreateTranslation(vpossition.X,vpossition.Y,0) )*camera  ;
+            //prüfe was gamestate
             obj.mesh.Draw(comb);
         }
         
@@ -85,5 +86,6 @@ public class View
         rotation = 0;
     }
     
+    //remove object?
     
 }

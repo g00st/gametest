@@ -59,13 +59,15 @@ public class Mesh
 
     public void Draw(Matrix4 mvp)
     {
+        //uniform callback haben
+        //aus zb shader.frag alle uniforms holen
         Random zufall = new Random();
         int zufallszahl = zufall.Next(0, 14);
         _vao.Bind();
         _texture.Bind();
         _shader.Bind();
-        _shader.setUniformM4("u_MVP", mvp);
-        _shader.setUniform4v("u_Color", 1.0f,1.0f,1.0f,(float)zufallszahl);
+        _shader.setUniformM4("u_MVP", mvp);         //weil uniform hier kacke
+        _shader.setUniform4v("u_Color", 1.0f,1.0f,1.0f,(float)zufallszahl); //weil uniform hier kacke
         GL.DrawElements(PrimitiveType.Triangles, _Indecies.Length, DrawElementsType.UnsignedInt, 0);
 
     }

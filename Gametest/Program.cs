@@ -12,9 +12,22 @@ using Vector2 = OpenTK.Mathematics.Vector2;
 using System.Threading.Tasks;
 using Gametest;
 
+
+/*
+ * versuchen zu bauen struktur damit wie bei chicken
+ * wir haben startmenu und button zu szene wechsel und zurück
+ * maybe auch exit escape?
+ */
+
+// in public game class stopfen
+
+//this.backButton.SetCallback(BackHandler); 
+
 Console.WriteLine("Hello, World!");
 GameWindow game = new GameWindow(GameWindowSettings.Default, new NativeWindowSettings() { Size = (800, 900), Title = "hi",Profile = ContextProfile.Compatability});
 game.VSync = VSyncMode.On;
+Gamestate gamestate = new Gamestate();
+gamestate = Gamestate.startmenu;
 Texture text = new Texture("resources/floorTiles..png");
 Shader shader = new Shader("resources/shader.vert", "resources/shader.frag");
 float[] vertices = {
@@ -104,6 +117,8 @@ game.UpdateFrame += _ => urotatio();
 game.Run();
 
 void Update( KeyboardKeyEventArgs e){
+    //update gamestate
+
     switch (e.Key)
     {
         case Keys.W: Main.vpossition.Y+=100; break;
@@ -117,6 +132,7 @@ void Update( KeyboardKeyEventArgs e){
         case Keys.F: Main.vsize.X-=10; break;
         case Keys.Q:  Main.rotation --; break;
        
+           
        
     } 
     Console.WriteLine("poss: " + Main.vpossition +"  size: " + Main.vsize + " rot: "+ Main.rotation);

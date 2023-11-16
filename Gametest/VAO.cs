@@ -4,7 +4,7 @@ using GL = OpenTK.Graphics.OpenGL4.GL;
 using VertexAttribType = OpenTK.Graphics.OpenGL4.VertexAttribType;
 
 namespace Gametest;
-
+//vertex array object = VAO
 public class VAO
 {
     private uint _handle;
