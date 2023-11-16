@@ -22,6 +22,8 @@ using Gametest;
 
 // in public game class stopfen
 
+//irgendwann camera klasse machen, aber zuerst code aufräumen
+
 //this.backButton.SetCallback(BackHandler); 
 
 
