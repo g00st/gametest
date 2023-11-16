@@ -19,11 +19,13 @@ namespace Gametest
 	{
 		public Game1()
 		{
+		//wie vorlage wavesim
 		//hier struktur für game class
 
+			//ab hier alles von programm
 		}
 
-		//ab hier alles von programm
+		//void update();
 
 	}
 
