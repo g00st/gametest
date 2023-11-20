@@ -13,27 +13,30 @@ using System.Threading.Tasks;
 using Gametest;
 
 
+// using var game = new MFC.Game1();
+//game.Run();
+//hier eigentlich alles von programm rein und programm nur hier ausführen lassen
+//die beiden 2zeiler drüber
+
+//using var game = new Gametest.Game1();
+//game.Run();
+
+Game1 game = new Game1(800, 800, "LearnOpenTK");
+game.Run();
+
+//funzt?
 
 /*
  * versuchen zu bauen struktur damit wie bei chicken
  * wir haben startmenu und button zu szene wechsel und zurück
  * maybe auch exit escape?
+ * durch oberinterface renderable, zuerst liste an renderable und wenn die okay dann
+ * liste von drawobjects durchgehen und drawen
  */
 
-// in public game class stopfen
-
-//irgendwann camera klasse machen, aber zuerst code aufräumen
-
-//this.backButton.SetCallback(BackHandler); 
 
 
-/* OnRenderFrame hier rein
- * 
- * game.RenderFrame += _ => Main.draw();
-game.RenderFrame += _ => game.SwapBuffers();
- * 
- */
-
+/*
 Console.WriteLine("Hello, World!");
 //(int width, int height, string title) : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = (width, height), Title = title,Profile = ContextProfile.Compatability,
 //Flags = ContextFlags.Default })
@@ -160,3 +163,6 @@ void urotatio(){
         objects[i].Rotation = rotation ;
     }
 }
+
+
+//*/
