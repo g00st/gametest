@@ -22,6 +22,7 @@ using Gametest;
 //game.Run();
 
 Game1 game = new Game1(800, 800, "LearnOpenTK");
+ErrorChecker.InitializeGLDebugCallback();  
 game.Run();
 
 //funzt?
