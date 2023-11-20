@@ -185,8 +185,13 @@ namespace Gametest
 		{
 			base.OnRenderFrame(args);
 
-			this.RenderFrame += _ => Main.draw();    // zu onrenderframe, override
-			this.RenderFrame += _ => this.SwapBuffers();
+			base.OnRenderFrame(args);
+
+			//this.RenderFrame += _ => Main.draw();    // zu onrenderframe, override
+			Main.draw(); 
+			//this.RenderFrame += _ => this.SwapBuffers();
+			this.SwapBuffers();
+
 
 		}
 
