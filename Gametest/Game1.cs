@@ -23,7 +23,7 @@ namespace Gametest
 	//ErrorChecker.InitializeGLDebugCallback(); ?
 	public class Game1 : GameWindow
 	{
-		Gamestate gameState = Gamestate.startmenu;
+		Gamestate gameState = Gamestate.gameisrunning;
 		View Main = new View();
 		private int Width;
 		private int Height;
@@ -136,28 +136,7 @@ namespace Gametest
 		{
 			//update gamestate
 			/*
-			switch(this.gameState)
-            {
-				case Gamestate.startmenu:
-					//draw menu
-					//this.backgroundroundColor = Color.Aqua;
-					Console.WriteLine("Game starting");
-					break;
-				case Gamestate.settings:
-					//draw settings
-					Console.WriteLine("Settings");
-					// this.Scene = new List<Drawable>() { this.backButton };
-					break;
-				case Gamestate.gameisrunning:
-					//draw map und rest
-					Console.WriteLine("Game running");
-                    break;
-				case Gamestate.gameover:
-					//draw game over
-					Console.WriteLine("Game stopped running, back to Menu");
-					break;
-
-            }
+			
 			*/
 
 
@@ -187,11 +166,51 @@ namespace Gametest
 
 			base.OnRenderFrame(args);
 
-			//this.RenderFrame += _ => Main.draw();    // zu onrenderframe, override
-			Main.draw(); 
-			//this.RenderFrame += _ => this.SwapBuffers();
-			this.SwapBuffers();
+			switch (this.gameState)
+			{
+				case Gamestate.startmenu:
+					//draw menu
+					//this.backgroundroundColor = Color.Aqua;
+					//Console.WriteLine("Game starting");
 
+					//Änderungen von Main für andere Szene
+
+					Main.draw();
+					this.SwapBuffers();
+					break;
+				case Gamestate.settings:
+					//draw settings
+					//Console.WriteLine("Settings");
+					// this.Scene = new List<Drawable>() { this.backButton };
+
+					//Änderungen von Main für andere Szene
+
+					Main.draw();
+					this.SwapBuffers();
+					break;
+				case Gamestate.gameisrunning:
+					//draw map und rest
+					//Console.WriteLine("Game running");
+
+					//Änderungen von Main für andere Szene
+
+					Main.draw();
+					this.SwapBuffers();
+					break;
+				case Gamestate.gameover:
+					//draw game over
+					//Console.WriteLine("Game stopped running, back to Menu");
+
+					//Änderungen von Main für andere Szene
+
+					Main.draw();
+					this.SwapBuffers();
+
+					break;
+
+			}
+			//this.RenderFrame += _ => Main.draw();    // zu onrenderframe, override
+			//this.RenderFrame += _ => this.SwapBuffers();
 
 		}
 
