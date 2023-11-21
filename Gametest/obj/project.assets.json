@@ -402,11 +402,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj",
+      "projectUniqueName": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar comp\\Gametest\\Gametest.csproj",
       "projectName": "Gametest",
-      "projectPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj",
+      "projectPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar comp\\Gametest\\Gametest.csproj",
       "packagesPath": "C:\\Users\\herob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\obj\\",
+      "outputPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar comp\\Gametest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\herob\\AppData\\Roaming\\NuGet\\NuGet.Config",

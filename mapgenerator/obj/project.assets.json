@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\mapgenerator\\mapgenerator.csproj",
+      "projectUniqueName": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar comp\\mapgenerator\\mapgenerator.csproj",
       "projectName": "mapgenerator",
-      "projectPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\mapgenerator\\mapgenerator.csproj",
+      "projectPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar comp\\mapgenerator\\mapgenerator.csproj",
       "packagesPath": "C:\\Users\\herob\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\mapgenerator\\obj\\",
+      "outputPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar comp\\mapgenerator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\herob\\AppData\\Roaming\\NuGet\\NuGet.Config",
