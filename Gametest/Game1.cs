@@ -29,6 +29,8 @@ namespace Gametest
 		private int Height;
 		public List<DrawInfo> objects = new List<DrawInfo>();
 		public float rotation = 0;
+		//MouseState StateOfMouse = MouseState.IsButtonDown;
+		
 
 		public Game1(int width, int height, string title) : base(GameWindowSettings.Default, new NativeWindowSettings() { Size = (800, 900), Title = "hi", Profile = ContextProfile.Compatability })
 		{
@@ -174,6 +176,8 @@ namespace Gametest
 					//Console.WriteLine("Game starting");
 
 					//Änderungen von Main für andere Szene
+
+					
 
 					Main.draw();
 					this.SwapBuffers();
