@@ -8,15 +8,18 @@ using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 
 
-
-public class View
+public class SubView
 {
+
+
+
     private List<DrawObject> drawObjects;
     public int  Width, Height;
     public Vector2 vpossition;
     public Vector2 vsize;
     public float rotation;
-    
+    public VBO _rendertarget;
+   
     
    
     
@@ -34,8 +37,9 @@ public class View
     }
     public void draw()
     {
+        _rendertarget.Bind();
         Matrix4 camera =  calcCameraProjection();
-
+        GL.ClearColor(Color4.Black);
         GL.Clear(ClearBufferMask.ColorBufferBit);
         //statt liste an drawobjects dann eine liste an renderables
         foreach (var drawObject in drawObjects)
@@ -72,16 +76,18 @@ public class View
         float right = vpossition.X + vsize.X / 2.0f;
         float bottom = vpossition.Y -  ((vsize.X/Width)*Height)/ 2.0f;
         float top = vpossition.Y +  ((vsize.X/Width)*Height)/ 2.0f;
-        //Console.WriteLine(Matrix4.CreateOrthographicOffCenter(left, right, bottom, top, -1.0f, 1.0f));
-
         return  Matrix4.CreateOrthographicOffCenter(left, right, bottom, top, -1.0f, 1.0f);
 
         
     }
-    public View()
+    public SubView( VBO rendertarget)
     {
-        vsize = new Vector2(100, 100);
-        vpossition = new Vector2(50, 50);
+        
+        _rendertarget = rendertarget;
+        vsize = new Vector2(rendertarget.Widht(), rendertarget.Height());
+        Width = rendertarget.Widht();
+        Height = rendertarget.Height();
+        vpossition = new Vector2(rendertarget.Widht()/2, rendertarget.Height()/2);
         drawObjects = new List<DrawObject>();
         rotation = 0;
     }

@@ -150,3 +150,8 @@ C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\Gametest\obj\Debug
 C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\Gametest\obj\Debug\net6.0\Gametest.genruntimeconfig.cache
 C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\Gametest\obj\Debug\net6.0\ref\Gametest.dll
 C:\Users\herob\RealUni\Uni\Computergrafik\code\radar gametest\Gametest\bin\Debug\net6.0\resources\Map1\Tiles.xml
+C:\Users\geist\RiderProjects\Gametest\Gametest\obj\Debug\net6.0\Gametest.sourcelink.json
+C:\Users\geist\RiderProjects\Gametest\Gametest\bin\Debug\net6.0\resources\Template\simple_MVP.vert
+C:\Users\geist\RiderProjects\Gametest\Gametest\bin\Debug\net6.0\resources\Template\single_color.frag
+C:\Users\geist\RiderProjects\Gametest\Gametest\bin\Debug\net6.0\resources\Template\simple_texture.frag
+C:\Users\geist\RiderProjects\Gametest\Gametest\bin\Debug\net6.0\resources\Template\simple_texture.vert

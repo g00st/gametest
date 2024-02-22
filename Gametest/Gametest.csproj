@@ -17,6 +17,18 @@
 
     <ItemGroup>
       <None Remove="resources\Map1\Tiles.xml" />
+      <None Update="resources\Template\simple_MVP.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\Template\single_color.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\Template\simple_texture.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\Template\simple_texture.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>

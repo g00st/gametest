@@ -52,7 +52,7 @@ public class VAO
     public void Bind()
     {
         GL.BindVertexArray(_handle);
-        ErrorChecker.CheckForGLErrors("hi");
+        ErrorChecker.CheckForGLErrors("Bind VAO");
     }
     
 }

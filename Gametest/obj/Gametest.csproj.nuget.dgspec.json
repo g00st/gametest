@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj": {}
+    "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj": {
+    "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj",
+        "projectUniqueName": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
         "projectName": "Gametest",
-        "projectPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\Gametest.csproj",
-        "packagesPath": "C:\\Users\\herob\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\herob\\RealUni\\Uni\\Computergrafik\\code\\radar gametest\\Gametest\\obj\\",
+        "projectPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\Gametest.csproj",
+        "packagesPath": "C:\\Users\\geist\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\geist\\RiderProjects\\Gametest\\Gametest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\herob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\geist\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,16 +55,35 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.26, 6.0.26]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

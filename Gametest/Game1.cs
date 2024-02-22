@@ -5,6 +5,7 @@ using OpenTK.Windowing.Desktop;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 using OpenTK.Graphics.OpenGL;
 using System.Drawing;
+using Gametest.Template;
 using OpenTK.Mathematics;
 
 
@@ -25,6 +26,7 @@ namespace Gametest
 	{
 		Gamestate gameState = Gamestate.startmenu;
 		View Main = new View();
+		List<SubView> subViews = new List<SubView>();
 		private int Width;
 		private int Height;
 		public List<DrawInfo> objects = new List<DrawInfo>();
@@ -35,86 +37,27 @@ namespace Gametest
 			Width = width;
 			Height = height;
 
-			//wie vorlage wavesim
-			//hier struktur für game class
-
-			//ab hier alles von programm
-
-			this.VSync = VSyncMode.On;   //in konstruktor this.VSync = VSyncMode.On;
-			//Gamestate gameState = new Gamestate();
-			//gameState = Gamestate.startmenu;
-			Texture text = new Texture("resources/floorTiles..png");
-			Shader shader = new Shader("resources/shader.vert", "resources/shader.frag");
-			float[] vertices = {
-			1.0f,  1.0f, 0.0f,  // top right
-		    1.0f,  0.0f, 0.0f,  // bottom right
-			 0.0f, 0.0f, 0.0f,  // bottom left
-		     0.0f,  1f, 0.0f   // top left
-			};
-			Console.WriteLine(text.Width);
-			Console.WriteLine(text.Height);
-			float[] textcords = {
-	 		32.0f/text.Width, 32.0f/text.Height,  // top right
-			32.0f/text.Width,0.0f , // bottom right
-			0.0f, 0.0f,  // bottom left
-			0.0f, 32.0f/text.Height  // top left
-			};
-
-			//re
-			uint[] indices = {  // note that we start from 0!
-			0, 1, 3,   // first triangle
-			1, 2, 3    // second triangle
-			};
-			//ErrorChecker.InitializeGLDebugCallback();   // nich in konstruktor, danach weiter konstruktor
-
-			Bufferlayout bufferlayout = new Bufferlayout();
-			bufferlayout.count = 3;
-			bufferlayout.normalized = false;
-			bufferlayout.offset = 0;
-			//bufferlayout.type = VertexAttribType.Float;
-			bufferlayout.typesize = sizeof(float);
+		
+			
 
 
-			Mesh test2 = new Mesh();
-			test2.AddAtribute(bufferlayout, vertices);
-			bufferlayout.count = 2;
-			test2.AddAtribute(bufferlayout, textcords);
-			test2.AddIndecies(indices);
+			
 
-			DrawInfo Body1 = new DrawInfo();
-			Body1.mesh = test2;
-			Body1.Position = new Vector2(50, 50);
-			Body1.Size = new Vector2(100, 100);
-			Body1.Rotation = 90.0f;
-			//float rotation = 0;
-			//View Main = new View();  //update braucht das, maybe globale?
-			test lol = new test();
-			lol.test2 = Body1;
-			Main.addObject(lol);
-			//List<DrawInfo> objects = new List<DrawInfo>();
-			for (int i = 0; i < 10; i++)
-			{
-				DrawInfo temp = new DrawInfo();
-				temp.mesh = test2;
-				temp.Rotation = rotation;
-				temp.Size = new Vector2(50, 50);
-				temp.Position = new Vector2(50 * i, 50 * i);
-				//Console.WriteLine(temp.Position);
-				//Console.WriteLine(i);
-				objects.Add(temp);
-				test lol2 = new test();
-				lol2.test2 = Body1;
-				Main.addObject(lol2);
-			}
-
-
-			test2.Shader = shader;
-			test2.Texture = text;
-
-
-			Map dontdie = Loader.LoadMap("resources/Map1/");
-
-			Main.addObject(dontdie);
+			
+			
+			 Texture subViewsurface = new Texture(100, 100);
+			 SubView subView = new SubView(new VBO(subViewsurface));
+			
+			 subView.addObject(new ColoredRectangle(new Vector2(50, 50), new Vector2(50, 50), Color4.Red));
+			 subView.addObject(new ColoredRectangle(new Vector2(50, 50), new Vector2(10, 10), Color4.Blue));
+			 
+			 subViews.Add(subView);
+			 TexturedRectangle t = new TexturedRectangle(subViewsurface);
+				 t.DrawInfo.Position = new Vector2(0, 0);
+			 Main.addObject(t);
+			// Main.addObject(new ColoredRectangle(new Vector2(50, 50), new Vector2(100, 100), Color4.Red));
+		
+			//Main.addObject(dontdie);
 
 			this.Resize += e => Main.Resize(e.Width, e.Height);
 
@@ -163,10 +106,14 @@ namespace Gametest
 
 			switch (e.Key)
 			{
-				case Keys.W: Main.vpossition.Y += 100; break;
+				case Keys.W: Main.vpossition.Y += 10;
+					subViews[0].vpossition.Y -= 10; break;
 				case Keys.A: Main.vpossition.X -= 10; break;
-				case Keys.S: Main.vpossition.Y -= 10; break;
+				case Keys.S: Main.vpossition.Y -= 10; 
+					subViews[0].vpossition.Y += 10; break;break;
 				case Keys.D: Main.vpossition.X += 10; break;
+				
+				
 
 
 				case Keys.E: Main.rotation++; break;
@@ -188,7 +135,13 @@ namespace Gametest
 			base.OnRenderFrame(args);
 
 			//this.RenderFrame += _ => Main.draw();    // zu onrenderframe, override
+			foreach (var view in subViews)
+			{
+				view.draw();
+			}
+			
 			Main.draw(); 
+			//this.RenderFrame += _ => game.SwapBuffers();    // zu onrenderframe, override
 			//this.RenderFrame += _ => this.SwapBuffers();
 			this.SwapBuffers();
 

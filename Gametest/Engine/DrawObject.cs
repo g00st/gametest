@@ -2,7 +2,6 @@
 
 public interface DrawObject
 {
-                
         DrawInfo DrawInfo { get; }
        
 }

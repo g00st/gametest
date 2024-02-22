@@ -4,15 +4,21 @@ namespace Gametest;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 
+ struct UniformData
+{
+    public ActiveUniformType Type;
+     public int Location;
+}
+
 public class Shader
 {
     private int vertexHandle;
     private int fragmentHandle;
     private int _Handle;
-    
-    
+    private Dictionary<string, UniformData> uniformLocations;
     public Shader(string vertex, string fragment)
     {
+        uniformLocations = new Dictionary<string, UniformData>();
         string vertexData = Loader.LoadVertexShader(vertex);
         string fragementData = Loader.LoadFragmentShader(fragment);
         
@@ -27,20 +33,44 @@ public class Shader
 
         int res =0;
         GL.GetShader(vertexHandle,ShaderParameter.CompileStatus, out  res);
-        if (1 == res) { Console.WriteLine("vertex shader compiled"); } else { Console.WriteLine( " eee1"+ GL.GetProgramInfoLog(vertexHandle)); }
+        if (1 == res) { Console.WriteLine("vertex shader compiled: "+ vertex); } else { Console.WriteLine( " shader compilation error: "+ vertex + GL.GetProgramInfoLog(vertexHandle)); }
         GL.GetShader(fragmentHandle,ShaderParameter.CompileStatus, out  res);
-        if (1 == res) { Console.WriteLine("frag shader compiled"); } else { Console.WriteLine(" eee2"+GL.GetProgramInfoLog(fragmentHandle)); }
+        if (1 == res) { Console.WriteLine("frag shader compiled: " +fragment); } else { Console.WriteLine(" shader compilation error: "+fragment + GL.GetProgramInfoLog(fragmentHandle)); }
 
         _Handle = GL.CreateProgram();
         GL.AttachShader(_Handle,vertexHandle);
         GL.AttachShader(_Handle,fragmentHandle);
         GL.LinkProgram(_Handle);
         GL.ValidateProgram(_Handle);
-    }  
+        GenerateUniforms();
+    }
+
+    private void GenerateUniforms()
+    {
+        // Get the number of active uniforms in the shader program
+        GL.GetProgram(_Handle, GetProgramParameterName.ActiveUniforms, out int uniformCount);
+
+        // Query and store uniform information
+        for (int i = 0; i < uniformCount; i++)
+        {
+            string uniformName = GL.GetActiveUniform(_Handle, i, out _, out ActiveUniformType uniformType);
+            Console.WriteLine(uniformName +"  "+ uniformType);
+            
+            int location = GL.GetUniformLocation(_Handle, uniformName);
+            UniformData t;
+            t.Type = uniformType;
+            t.Location = location;
+            uniformLocations.Add(uniformName, t);
+
+            // You can store the uniform type if needed
+            // For example: uniformTypes.Add(uniformName, uniformType);
+        }
+    }
     public void Bind(){ GL.UseProgram(_Handle);}
     public void Unbind (){GL.UseProgram(0);}
 
-
+    
+   
     public void setUniform1i(string name,int v1)
     {
         GL.Uniform1( GL.GetUniformLocation(_Handle, name),v1);
@@ -48,8 +78,6 @@ public class Shader
 
     public void setUniformV2f(string name, Vector2 v2)
     {
-     
-    
         GL.Uniform2( GL.GetUniformLocation(_Handle, name),v2);
     }   
     
