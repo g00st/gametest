@@ -10,7 +10,7 @@ using Gametest.Template;
 using OpenTK.Mathematics;
 using ImGuiNET;
 using OpenTK.ImGui;
-
+using Gametest.Menues;
 
 namespace Gametest
 {
@@ -20,7 +20,7 @@ namespace Gametest
         Vector2 possition = new Vector2(1000, 5000);
         private float scalar = 1000.0f;
         private Radar radar;
-        Gamestate gameState = Gamestate.startmenu;
+        Gamestate gameState = Gamestate.Startmenu;
         View Main = new View();
         List<SubView> subViews = new List<SubView>();
         private int Width;
