@@ -49,8 +49,8 @@ public class Texture
 
     
 
-        public void Bind()
+        public void Bind(uint slot)
     {
-        GL.BindTextureUnit(0,_handle);
+        GL.BindTextureUnit(slot,_handle);
     }
 }

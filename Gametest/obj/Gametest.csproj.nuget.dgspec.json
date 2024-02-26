@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[4.8.1, )"
             },
+            "OpenTK.ImGui": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "StbImageSharp": {
               "target": "Package",
               "version": "[2.27.13, )"

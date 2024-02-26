@@ -35,5 +35,10 @@ public DrawInfo DrawInfo { get; }
     {
         
     }
+    
+    public TexturedRectangle(Vector2 positon, Vector2 size, Texture texture, Shader shader) : this(positon, size, texture)
+    {
+        this.DrawInfo.mesh.Shader = shader;
+    }
 
 }

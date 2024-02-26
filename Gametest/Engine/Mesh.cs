@@ -11,13 +11,14 @@ public class Mesh
 {
     public Mesh()
     {
+        _texture = new List<Texture>();
         _Vertecies = new List<float[]>();
         _vao = new VAO();
     }
     private int _verteciesLenght;
     private Shader _shader;
     private VAO _vao;
-    private Texture _texture;
+    private  List<Texture> _texture;
     private Matrix4 _MVP;
     private List<float[]> _Vertecies;
     private uint[] _Indecies;
@@ -31,8 +32,8 @@ public class Mesh
 
     public Texture Texture
     {
-        get { return _texture; }
-        set { _texture = value; }
+        get { return _texture[0]; }
+        set { _texture.Add(value); }
     }
 
 
@@ -62,9 +63,12 @@ public class Mesh
         //uniform callback haben
         //aus zb shader.frag alle uniforms holen
         _vao.Bind();
-        if (_texture != null)
+        uint count = 0;
+        foreach (var VARIABLE in _texture)
         {
-            _texture.Bind();
+            
+            VARIABLE.Bind(count);
+            count++;
         }
 
             _shader.Bind();

@@ -70,12 +70,11 @@ public class SubView
     private Matrix4 calcCameraProjection()
     {
 
-      
-        float zoom = 100;
+     
         float left = vpossition.X - vsize.X / 2.0f;
         float right = vpossition.X + vsize.X / 2.0f;
-        float bottom = vpossition.Y -  ((vsize.X/Width)*Height)/ 2.0f;
-        float top = vpossition.Y +  ((vsize.X/Width)*Height)/ 2.0f;
+        float bottom = vpossition.Y - vsize.Y/ 2.0f;
+        float top = vpossition.Y + vsize.Y / 2.0f;
         return  Matrix4.CreateOrthographicOffCenter(left, right, bottom, top, -1.0f, 1.0f);
 
         

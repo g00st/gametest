@@ -29,6 +29,27 @@
       <None Update="resources\Template\simple_texture.vert">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="resources\radar\radar.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\radar\radar.vert">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\test.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\radarcrossection.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\radar\radarBlend.frag">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\radarcrossection2.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="resources\Unbenannt.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>
@@ -39,6 +60,7 @@
 
     <ItemGroup>
       <PackageReference Include="OpenTK" Version="4.8.1" />
+      <PackageReference Include="OpenTK.ImGui" Version="1.0.0" />
       <PackageReference Include="StbImageSharp" Version="2.27.13" />
     </ItemGroup>
 
