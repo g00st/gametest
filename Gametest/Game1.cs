@@ -27,7 +27,7 @@ namespace Gametest
         private int Height;
         public List<DrawObject> objects = new List<DrawObject>();
         private ImGuiController _controller;
-        private const int TargetFPS = 60; // Set your target FPS here
+        private const int TargetFPS = 30; // Set your target FPS here
         private Random _random = new Random();
         private DateTime _lastFrameTime;
 
