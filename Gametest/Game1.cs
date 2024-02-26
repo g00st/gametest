@@ -30,6 +30,9 @@ namespace Gametest
         private const int TargetFPS = 30; // Set your target FPS here
         private Random _random = new Random();
         private DateTime _lastFrameTime;
+        MouseState mouseState;
+        Vector2 mousePosition;
+
 
         public float rotation = 0;
        
@@ -40,7 +43,9 @@ namespace Gametest
            
             Width = width;
             Height = height;
-            
+
+            mouseState = MouseState.GetSnapshot();
+
             radar = new Radar();
             Texture subViewsurface = new Texture(1000, 1000);
             SubView subView = new SubView(new VBO(subViewsurface));
@@ -113,6 +118,10 @@ namespace Gametest
                     possition.X += 10;
                     radar.SetPosition(possition);
                     break;
+            // WHO NEEDS A MOUSE, I NEED A KEYBOARD EXIT, WHY DIDNT YOU DO ONE JULIAN
+                case Keys.Escape:
+                    Close();
+                    break;
 
 
                 //case Keys.E: Main.rotation++; break;
@@ -167,7 +176,10 @@ namespace Gametest
                         break;
             }
 
+            mouseState = MouseState.GetSnapshot();
+            mousePosition = mouseState.Position;
             Console.WriteLine("poss: " + possition + "  size: " +scalar + " rot: " + Main.rotation);
+            Console.WriteLine("mouse1: " + mousePosition.X + " mouse2: " + mousePosition.Y);
         }
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
