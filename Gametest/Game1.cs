@@ -17,7 +17,7 @@ namespace Gametest
     //ErrorChecker.InitializeGLDebugCallback(); ?
     public class Game1 : GameWindow
     {
-        Vector2 possition = new Vector2(0, 0);
+        Vector2 possition = new Vector2(1000, 5000);
         private float scalar = 1000.0f;
         private Radar radar;
         Gamestate gameState = Gamestate.startmenu;
@@ -45,9 +45,9 @@ namespace Gametest
             Texture subViewsurface = new Texture(1000, 1000);
             SubView subView = new SubView(new VBO(subViewsurface));
             subView.ClearColor = Color4.Transparent;
-            subView.addObject(new ColoredRectangle(new Vector2(100, 100), new Vector2(100, 100), Color4.Firebrick));
+           // subView.addObject(new ColoredRectangle(new Vector2(100, 100), new Vector2(100, 100), Color4.Firebrick));
             subView.addObject(new TexturedRectangle(new Vector2(0), new Vector2(1000, 1000), radar._ScreenTexture2));
-            subView.addObject(new TexturedRectangle(new Vector2(0), new Vector2(300, 300), radar.DebugTexture));
+            Main.addObject(new TexturedRectangle(new Vector2(0), new Vector2(300, 300), radar.DebugTexture));
             radar.AddObject(new TexturedRectangle(new Vector2(0), new Vector2(10000, 10000), new Texture("resources/Unbenannt.png")));
            
             for (int i = 0; i < 10; i++)

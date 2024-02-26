@@ -56,7 +56,7 @@ void main()
         l = l*0.95;
     }*/
 
-    l = texture(texture2,VC).g * exp(-0.05);
+    l = texture(texture2,VC).g * exp(-0.03);
     
     if (distanceToOrigin < offset && distanceToOrigin > offset -linewidth*2) {
         marker = (remap(linewidth-abs(distanceToOrigin - offset) , 0,linewidth,  0.0, 1.0));
