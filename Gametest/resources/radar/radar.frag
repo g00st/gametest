@@ -50,8 +50,16 @@ void main()
     float newRed = 0.0;
     float a = alignment(texCoord, u_Origin, u_Rotation + 180.0);
     int beamwidth = 1;
+    
+    vec2 jj = vec2(0.0,0.0);
+    vec4 mm = vec4(0.0);
     if(remapTo360(a ) >360-beamwidth ) {
-               newRed = texture(tex,VC).g *  remap( remapTo360(a),360-beamwidth,360,0,1); 
+               newRed = texture(tex,VC).g *  remap( remapTo360(a),360-beamwidth,360,0,1);
+                for (int i = 0;  i< 100; i++) {
+                             jj = getNtPointsalongVectors(u_Origin,VC,i,100);
+                             mm +=  texture(tex,jj)*distance;
+                             //mm +=  texture(tex,jj)*10;
+                       } 
                 
         }
     if(remapTo360(a ) >360-beamwidth*0.1 ) {
@@ -60,14 +68,8 @@ void main()
         }
         
     float maxenergy = 1.0*exp(-1 * distance);
-    vec2 jj = vec2(0.0,0.0);
-    vec4 mm = vec4(0.0);
         
-    for (int i = 0;  i< 100; i++) {
-              jj = getNtPointsalongVectors(u_Origin,VC,i,100);
-              mm +=  texture(tex,jj)*distance;
-              //mm +=  texture(tex,jj)*10;
-        }
+ 
     maxenergy = clamp(maxenergy-mm.g,0.0,1.0 ) ;
     // maxenergy = remap( maxenergy-mm.g,0.0,0.5,0.0,1.0);
            
