@@ -19,6 +19,7 @@ public class SubView
     public Vector2 vsize;
     public float rotation;
     public VBO _rendertarget;
+    public Color4 ClearColor;
    
     
    
@@ -39,8 +40,9 @@ public class SubView
     {
         _rendertarget.Bind();
         Matrix4 camera =  calcCameraProjection();
-        GL.ClearColor(Color4.Black);
+        GL.ClearColor(ClearColor);
         GL.Clear(ClearBufferMask.ColorBufferBit);
+        
         //statt liste an drawobjects dann eine liste an renderables
         foreach (var drawObject in drawObjects)
         {
@@ -81,7 +83,7 @@ public class SubView
     }
     public SubView( VBO rendertarget)
     {
-        
+        ClearColor = Color4.Black;
         _rendertarget = rendertarget;
         vsize = new Vector2(rendertarget.Widht(), rendertarget.Height());
         Width = rendertarget.Widht();

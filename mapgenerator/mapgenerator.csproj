@@ -7,4 +7,10 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="OpenTK" Version="4.8.2" />
+      <PackageReference Include="OpenTK.ImGui" Version="1.0.0" />
+      <PackageReference Include="StbImageSharp" Version="2.27.13" />
+    </ItemGroup>
+
 </Project>

@@ -60,7 +60,7 @@ public class Radar
          minAngle = 0;
          maxAngle = 360;
          
-         
+         _Screenview2.ClearColor = new Color4(0,0,0,0);
          TexturedRectangle t = new TexturedRectangle( new Vector2(0,0), new Vector2(1000,1000), _BaseScenery,_radarShader);
          t.DrawInfo.mesh.Texture = _ScreenTexture3;
          _Screenview.addObject(t);

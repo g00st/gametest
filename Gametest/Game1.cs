@@ -44,6 +44,7 @@ namespace Gametest
             radar = new Radar();
             Texture subViewsurface = new Texture(1000, 1000);
             SubView subView = new SubView(new VBO(subViewsurface));
+            subView.ClearColor = Color4.Transparent;
             subView.addObject(new ColoredRectangle(new Vector2(100, 100), new Vector2(100, 100), Color4.Firebrick));
             subView.addObject(new TexturedRectangle(new Vector2(0), new Vector2(1000, 1000), radar._ScreenTexture2));
             subView.addObject(new TexturedRectangle(new Vector2(0), new Vector2(300, 300), radar.DebugTexture));

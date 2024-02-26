@@ -30,7 +30,7 @@ void main()
     float distanceToOrigin = distance(TexCoords, u_Origin);
 
     // Calculate blur intensity based on distance
-    float blurIntensity =   u_Multiplier;
+    float blurIntensity =   2;
 
     // Horizontal blur
     for (int i = 1; i < kernelSize; ++i) {
@@ -43,28 +43,40 @@ void main()
         float offset = float(i - (kernelSize / 2)) * blurIntensity;
         result += texture(tex, TexCoords + vec2(0, offset * texOffset.y)).rgb * kernel[i];
     } 
-    result = texture(tex, TexCoords).rgb;
+    //result = texture(tex, TexCoords).rgb;
     
-    float linewidth = 0.005;
+    float linewidth = 0.05;
     float marker = 0.0;
     float offset = 0.01* 20/ u_Multiplier;
+
+
+    float l = 0; 
+    /*texture(texture2,VC).g*0.99 +marker;
+    if( l <= 0.2) {
+        l = l*0.95;
+    }*/
+
+    l = texture(texture2,VC).g * exp(-0.05);
+    
     if (distanceToOrigin < offset && distanceToOrigin > offset -linewidth*2) {
-        marker = (remap(linewidth-abs(distanceToOrigin - offset) , 0,linewidth,  0.0, 1.0))- texture(texture2,VC).g*0.99;
+        marker = (remap(linewidth-abs(distanceToOrigin - offset) , 0,linewidth,  0.0, 1.0));
     }else if(distanceToOrigin > offset){
    
     if ( VC.x <     u_Origin.x + linewidth && VC.x > u_Origin.x - linewidth ) {
-       marker = (remap(linewidth-abs(u_Origin.x - VC.x) , 0,linewidth,  0.0, 1.0))- texture(texture2,VC).g*0.99;
+       marker = (remap(linewidth-abs(u_Origin.x - VC.x) , 0,linewidth,  0.0, 1.0));
     }
     if ( VC.y <     u_Origin.y + linewidth && VC.y > u_Origin.y - linewidth ) {
-        marker = (remap(linewidth-abs(u_Origin.y - VC.y) , 0,linewidth,  0.0, 1.0))- texture(texture2,VC).g*0.99;;
+        marker = (remap(linewidth-abs(u_Origin.y - VC.y) , 0,linewidth,  0.0, 1.0));
     }}
     
   
     
-    float l = texture(texture2,VC).g*0.99 +marker;
-    if( l <= 0.2) {
-        l = l*0.95;
+    float circle = 1.0;
+    if (distanceToOrigin > 0.5) {
+        circle = 0.0;
     }
+    
     fragColor = vec4(result.r,result.g + l,texture(tex,VC).b, 1.0);
+    fragColor = vec4(result.r*0.0,result.g + l,0.1, circle);
 
 }
